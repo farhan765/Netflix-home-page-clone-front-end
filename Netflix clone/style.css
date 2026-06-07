@@ -1,0 +1,265 @@
+/* Netflix Clone - Responsive, Accessible Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.pic {
+  background-image: url(images/imgi_1_PK-en-20251208-TRIFECTA-perspective_d17cdb2b-0797-401d-98d6-4e5ccbcf37f7_large.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Dark overlay for better text contrast */
+.pic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Header */
+header {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+#logo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#logo img {
+  width: 150px;
+  max-width: 25vw;
+  height: auto;
+  display: block;
+}
+
+/* Sign In CTA in header */
+.cta-signup {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #e50914;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-signup:hover {
+  background-color: #f40612;
+}
+
+/* Main Content */
+main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  width: 100%;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.hero-tagline {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 400;
+  margin: 0 0 30px 0;
+  opacity: 0.95;
+}
+
+/* Form Section */
+.form {
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.form-label {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 500;
+  margin: 0;
+}
+
+.form-inputs {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  gap: 10px;
+  align-items: center;
+}
+
+#email {
+  flex: 1 1 60%;
+  min-width: 0;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+
+#email:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.5);
+}
+
+.btn-get-started {
+  flex: 1 1 auto;
+  min-width: 140px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  background-color: #e50914;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-get-started:hover {
+  background-color: #f40612;
+}
+
+.btn-get-started:active {
+  transform: scale(0.98);
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #808080;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #logo {
+    padding: 15px 24px;
+  }
+
+  #logo img {
+    width: 120px;
+  }
+
+  .cta-signup {
+    padding: 7px 16px;
+    font-size: 0.9rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+
+  .form-label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #logo {
+    padding: 12px 16px;
+  }
+
+  #logo img {
+    width: 100px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.95rem;
+  }
+
+  .form-inputs {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  #email {
+    width: 100%;
+  }
+
+  .btn-get-started {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .form-label {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 380px) {
+  #logo img {
+    width: 85px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .cta-signup {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
